@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Incorporando Javascript em Páginas HTML</title>
+
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="exibe_resultado"> Resultado da Divisão é igual a: </div>
+</body>
+
+<script type="text/javascript">
+    let numeros = [];
+    for(let i=0; i<2; i++){
+        let temp = Number(prompt(`digite um número inteiro e positivo:`));
+        if(Number.isInteger(temp) && temp>0){
+            numeros[i] = temp
+        }
+        else{
+            alert('Número inválido, Digite novamente');
+        }
+    }
+   
+    let resultadoDivisao = divida(numeros[0], numeros[1]);
+    let divLocal = document.getElementById('exibe_resultado');
+    divLocal.innerHTML += resultadoDivisao;
+    
+    function divida(numero1, numero2) {
+        let resultado = numero1 / numero2;    
+        return resultado;
+    }
+</script>
+
+
+</html>
